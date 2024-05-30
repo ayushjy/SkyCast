@@ -1,5 +1,3 @@
-
-// weather API
 const options = {
     method: 'GET',
     headers: {
@@ -8,15 +6,15 @@ const options = {
     }
 };
 
+ const APi_URl="https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city="
 
-localStorage.setItem("cityname","city");
 const getweather = (city) => {  
     cityname.innerHTML = city;
-    fetch('https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city=' + city, options)
+    localStorage.setItem("cityname", city); // Store city name in localStorage
+    fetch(APi_URl + city, options)
         .then(response => response.json())
         .then((response) => {
 
-            console.log(response)
             cloud_pct.innerHTML = response.cloud_pct
             temp.innerHTML = response.temp
             feels_like.innerHTML = response.feels_like
@@ -35,10 +33,30 @@ submit.addEventListener("click", (e) => {
     getweather(city.value)
     
 })
-getweather("Delhi")
+getweather("patna")
+
+
+////////////////////////////////////////////aqi,js
 
 
 
+
+showtable1= document.getElementById("showtable1")
+showtable2= document.getElementById("showtable2")
+currpollutant=document.getElementById("currpollutant")
+airquality=document.getElementById("airquality")
+showtable1.addEventListener("click",function(event){
+    event.preventDefault(); 
+    currpollutant.style.display="table";
+    airquality.style.display="none";
+    return false;
+})
+showtable2.addEventListener("click",function(event){
+    event.preventDefault(); 
+    currpollutant.style.display="none";
+    airquality.style.display="table";
+    return false;
+})
 
 
 
