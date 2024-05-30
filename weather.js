@@ -36,10 +36,6 @@ submit.addEventListener("click", (e) => {
 getweather("patna")
 
 
-////////////////////////////////////////////aqi,js
-
-
-
 
 showtable1= document.getElementById("showtable1")
 showtable2= document.getElementById("showtable2")

@@ -8,17 +8,41 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <style>
-        .navbar-light {
-            background-color: rgb(21, 49, 113)!important;
-        }
-        h1{
-      color: rgb(28, 43, 109);
-    }
-    h2{
-        color: rgb(28, 43, 109);
-    }
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-    
+        .font1 {
+            font-family: "Poppins", sans-serif;
+            font-weight: 700;
+        }
+
+        .font2 {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+        }
+
+        .font3 {
+            font-family: "Poppins", sans-serif;
+            font-weight: 400;
+        }
+
+        .font4 {
+            font-family: "Poppins", sans-serif;
+            font-weight: 300;
+        }
+
+        .navbar-light {
+            background-color: rgb(21, 49, 113) !important;
+        }
+
+        h1 {
+            color: rgb(28, 43, 109);
+        }
+
+        h2 {
+            color: rgb(28, 43, 109);
+        }
+
+
 
         .getline {
             text-decoration: none;
@@ -35,226 +59,237 @@
         a:not([class]):hover {
             text-decoration: underline;
         }
-        #currpollutant{
+
+        #currpollutant {
             display: block;
         }
+
         #airquality {
             display: none;
         }
-        .wid{
+
+        .wid {
             width: 5rem;
         }
-        .wdth{
+
+        .wdth {
             width: 14rem;
         }
+
         body {
-      background-image: url("backgroud.jpg");
-			background-repeat: no-repeat;
-			background-size: cover;
-			background-position: center;
-      background-attachment: fixed;
-    }
-    
+            background-image: url("backgroud.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
     </style>
 </head>
 
 <body>
     <div class="cover">
-    <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary navbar-light">
-        <div class="container-fluid ">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="aqi.html">Air Quality</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="#">Health & Activities</a>
-                    </li>
-                </ul>
-                <form class="d-flex" role="search">
-                    <input id="aqicity" class="form-control me-2" type="search"
-                        placeholder="Search for city or place......" aria-label="Search">
-                    <button class="btn btn-outline-primary" type="button" id="submitaqi">Search</button>
-                </form>
-            </div>
-        </div>
-    </nav>
-    <h1 class="text-center  my-4">Air Quality Index</h1>
-    <div class="container">
-
-        <div class="col-md-6">
-            <div class="h-100 p-5 bg-light border rounded-3 mb-4">
-                <h2>Current AQI <span id="aqicityname"></span></h2>
-                <p class="col-md-8 fs-4"><span id="current" class="fw-semibold"></span></p>
-            </div>
-        </div>
-
-        <div class="p-1 mb-4 bg-light border rounded-3 ">
-            <div class="container-fluid pb-2">
-
-                <div class="d-flex justify-content-between mt-3">
-                    <div class=" d-flex  pe-3">
-
-                        <a href="" class="link-dark  getline" id="showtable1">
-                            <h5>Current Pollutant</h5>
-                        </a>
-                        <a href="" class="ps-3 link-dark  getline" id="showtable2">
-                            <h5>Air Quality Scale</h5>
-                        </a>
-                    </div>
-                    <div class=" d-flex me-2">
-                        <h5>Quantity</h5>
-                    </div>
+        <nav class="navbar navbar-expand-lg sticky-top bg-body-tertiary navbar-light">
+            <div class="container-fluid ">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="aqi.html">Air Quality</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="#">Health & Activities</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input id="aqicity" class="form-control me-2" type="search"
+                            placeholder="Search for city or place......" aria-label="Search">
+                        <button class="btn btn btn-info" type="button" id="submitaqi">Search</button>
+                    </form>
                 </div>
+            </div>
+        </nav>
+        <h1 class="text-center  my-4 font1">Air Quality Index</h1>
+        <div class="container">
 
-                <hr class="border border-danger border-2 opacity-50">
+            <div class="col-md-6">
+                <div class="h-100 p-5 bg-light border rounded-3 mb-4">
+                    <h2 class="font2">Current AQI <span id="aqicityname" class="text-danger"></span></h2>
+                    <p class="col-md-8 fs-4"><span id="current" class="fw-semibold"></span></p>
+                </div>
+            </div>
 
-                <table class="table" id="currpollutant">
+            <div class="p-1 mb-4 bg-light border rounded-3 ">
+                <div class="container-fluid pb-2">
 
-                    <tbody>
+                    <div class="d-flex justify-content-between mt-3">
+                        <div class=" d-flex  pe-3">
 
-                        <tr>
-                            <th scope="row">PM<sub>10</sub></th>
-                            <td class="px-5">Particulate Matter are inhalable pollutant particles with a diameter less
-                                than 10 micrometers.
-                                Particles that are larger than 2.5 micrometers can be deposited in airways,
-                                resulting in health issues. Exposure can result in eye and throat irritation,
-                                coughing or difficulty breathing, and aggravated asthma. More frequent and
-                                excessive exposure can result in more serious health effects.</td>
-                            <td class="fw-semibold wdth">Concentration: <span id="pma1"></span>µg/m³
-                                <div>AQI : <span id="pma2"></span></div>
-                            </td>
+                            <a href="" class="link-dark  getline" id="showtable1">
+                                <h5 class="font3 fs-5">Current Pollutant</h5>
+                            </a>
+                            <a href="" class="ps-3 link-dark  getline" id="showtable2">
+                                <h5 class="font3 fs-5">Air Quality Scale</h5>
+                            </a>
+                        </div>
+                        <div class=" d-flex me-2">
+                            <h5 class="font3 fs-5">Quantity</h5>
+                        </div>
+                    </div>
 
-                        </tr>
-                        <tr>
-                            <th scope="row">PM<sub>2.5</sub></th>
-                            <td class="px-5">Fine Particulate Matter are inhalable pollutant particles with a diameter
-                                less than 2.5 micrometers
-                                that
-                                can enter the lungs and bloodstream, resulting in serious health issues. The
-                                most severe impacts are on the lungs and heart. Exposure can result in coughing
-                                or difficulty breathing, aggravated asthma, and the development of chronic
-                                respiratory disease.</td>
-                            <td class="fw-semibold wdth">Concentration: <span id="pmb1"></span>µg/m³
-                                <div>AQI : <span id="pmb2"></span></div>
-                            </td>
+                    <hr class="border border-danger border-2 opacity-50">
 
-                        </tr>
-                        <tr>
-                            <th scope="row">O<sub>3</sub></th>
-                            <td class="px-5">Ground-level Ozone can aggravate existing respiratory diseases and also
-                                lead to throat
-                                irritation,
-                                headaches, and chest pain.</td>
-                            <td class="fw-semibold wdth">Concentration: <span id="o1"></span>µg/m³
-                                <div>AQI : <span id="o2"></span></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">NO<sub>2</sub></th>
-                            <td class="px-5">Breathing in high levels of Nitrogen Dioxide increases the risk of
-                                respiratory
-                                problems. Coughing and difficulty breathing are common and more serious health
-                                issues such as respiratory infections can occur with longer exposure.</td>
-                            <td class="fw-semibold wdth">Concentration: <span id="no1"></span>µg/m³
-                                <div>AQI : <span id="no2"></span></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">SO<sub>2</sub></th>
-                            <td class="px-5">Exposure to Sulfur Dioxide can lead to throat and eye irritation and
-                                aggravate
-                                asthma as well as chronic bronchitis.</td>
-                            <td class="fw-semibold wdth">Concentration: <span id="so1"></span>µg/m³
-                                <div>AQI : <span id="so2"></span></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">CO</th>
-                            <td class="px-5">Carbon Monoxide is a colorless and odorless gas and when inhaled at high
-                                levels can cause headache, nausea, dizziness, and vomiting. Repeated long-term exposure
-                                can lead to heart disease</td>
-                            <td class="fw-semibold wdth">Concentration: <span id="co1"></span>µg/m³
-                                <div>AQI : <span id="co2"></span></div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                    <table class="table" id="currpollutant">
+
+                        <tbody>
+
+                            <tr>
+                                <th scope="row font3 fs-5">PM<sub>10</sub></th>
+                                <td class="px-5 font4 fs-6">Particulate Matter are inhalable pollutant particles with a diameter
+                                    less
+                                    than 10 micrometers.
+                                    Particles that are larger than 2.5 micrometers can be deposited in airways,
+                                    resulting in health issues. Exposure can result in eye and throat irritation,
+                                    coughing or difficulty breathing, and aggravated asthma. More frequent and
+                                    excessive exposure can result in more serious health effects.</td>
+                                <td class="fw-semibold wdth">Concentration: <span id="pma1"></span>µg/m³
+                                    <div>AQI : <span id="pma2"></span></div>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <th scope="row font3 fs-5">PM<sub>2.5</sub></th>
+                                <td class="px-5 font4 fs-6">Fine Particulate Matter are inhalable pollutant particles with a
+                                    diameter
+                                    less than 2.5 micrometers
+                                    that
+                                    can enter the lungs and bloodstream, resulting in serious health issues. The
+                                    most severe impacts are on the lungs and heart. Exposure can result in coughing
+                                    or difficulty breathing, aggravated asthma, and the development of chronic
+                                    respiratory disease.</td>
+                                <td class="fw-semibold wdth">Concentration: <span id="pmb1"></span>µg/m³
+                                    <div>AQI : <span id="pmb2"></span></div>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <th scope="row font3 fs-5">O<sub>3</sub></th>
+                                <td class="px-5 font4 fs-6">Ground-level Ozone can aggravate existing respiratory diseases and also
+                                    lead to throat
+                                    irritation,
+                                    headaches, and chest pain.</td>
+                                <td class="fw-semibold wdth">Concentration: <span id="o1"></span>µg/m³
+                                    <div>AQI : <span id="o2"></span></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row font3 fs-5">NO<sub>2</sub></th>
+                                <td class="px-5 font4 fs-6">Breathing in high levels of Nitrogen Dioxide increases the risk of
+                                    respiratory
+                                    problems. Coughing and difficulty breathing are common and more serious health
+                                    issues such as respiratory infections can occur with longer exposure.</td>
+                                <td class="fw-semibold wdth">Concentration: <span id="no1"></span>µg/m³
+                                    <div>AQI : <span id="no2"></span></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row font3 fs-5">SO<sub>2</sub></th>
+                                <td class="px-5 font4 fs-6">Exposure to Sulfur Dioxide can lead to throat and eye irritation and
+                                    aggravate
+                                    asthma as well as chronic bronchitis.</td>
+                                <td class="fw-semibold wdth">Concentration: <span id="so1"></span>µg/m³
+                                    <div>AQI : <span id="so2"></span></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope=" font3 fs-5 row">CO</th>
+                                <td class="px-5 font4 fs-6">Carbon Monoxide is a colorless and odorless gas and when inhaled at
+                                    high
+                                    levels can cause headache, nausea, dizziness, and vomiting. Repeated long-term
+                                    exposure
+                                    can lead to heart disease</td>
+                                <td class="fw-semibold wdth">Concentration: <span id="co1"></span>µg/m³
+                                    <div>AQI : <span id="co2"></span></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
 
 
-                <table class="table" id="airquality">
+                    <table class="table" id="airquality">
 
-                    <tbody>
+                        <tbody>
 
-                        <tr>
-                            <th scope="row">Excellent</sub></th>
-                            <td class="px-5">The air quality is ideal for most individuals; enjoy your normal outdoor
-                                activities.</td>
-                            <td class="wid fw-semibold">
-                                <div>0-19</div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Fair</sub></th>
-                            <td class="px-5">The air quality is generally acceptable for most individuals. However,
-                                sensitive groups may experience minor to moderate symptoms from long-term exposure.</td>
-                            <td class="wid fw-semibold">
-                                <div>20-49</div>
-                            </td>
+                            <tr>
+                                <th scope="row">Excellent</sub></th>
+                                <td class="px-5">The air quality is ideal for most individuals; enjoy your normal
+                                    outdoor
+                                    activities.</td>
+                                <td class="wid fw-semibold">
+                                    <div>0-19</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Fair</sub></th>
+                                <td class="px-5">The air quality is generally acceptable for most individuals. However,
+                                    sensitive groups may experience minor to moderate symptoms from long-term exposure.
+                                </td>
+                                <td class="wid fw-semibold">
+                                    <div>20-49</div>
+                                </td>
 
-                        </tr>
-                        <tr>
-                            <th scope="row">Poor</sub></th>
-                            <td class="px-5">The air has reached a high level of pollution and is unhealthy for
-                                sensitive groups. Reduce time spent outside if you are feeling symptoms such as
-                                difficulty breathing or throat irritation.</td>
-                            <td class="wid fw-semibold">
-                                <div>50-99</div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Unhealthy</sub></th>
-                            <td class="px-5">Health effects can be immediately felt by sensitive groups. Healthy
-                                individuals may experience difficulty breathing and throat irritation with prolonged
-                                exposure. Limit outdoor activity.</td>
-                            <td class="wid fw-semibold" >
-                                <div>100-149</div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Very Unhealthy</sub></th>
-                            <td class="px-5">Health effects will be immediately felt by sensitive groups and should
-                                avoid outdoor activity. Healthy individuals are likely to experience difficulty
-                                breathing and throat irritation; consider staying indoors and rescheduling outdoor
-                                activities.</td>
-                            <td class="wid fw-semibold" >
-                                <div >150-249</div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Dangerous</sub></th>
-                            <td class="px-5">Any exposure to the air, even for a few minutes, can lead to serious health
-                                effects on everybody. Avoid outdoor activities.</td>
-                            <td class="wid fw-semibold">
-                                <div>250+</div>
-                            </td>
-                        </tr>
+                            </tr>
+                            <tr>
+                                <th scope="row">Poor</sub></th>
+                                <td class="px-5">The air has reached a high level of pollution and is unhealthy for
+                                    sensitive groups. Reduce time spent outside if you are feeling symptoms such as
+                                    difficulty breathing or throat irritation.</td>
+                                <td class="wid fw-semibold">
+                                    <div>50-99</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Unhealthy</sub></th>
+                                <td class="px-5">Health effects can be immediately felt by sensitive groups. Healthy
+                                    individuals may experience difficulty breathing and throat irritation with prolonged
+                                    exposure. Limit outdoor activity.</td>
+                                <td class="wid fw-semibold">
+                                    <div>100-149</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Very Unhealthy</sub></th>
+                                <td class="px-5">Health effects will be immediately felt by sensitive groups and should
+                                    avoid outdoor activity. Healthy individuals are likely to experience difficulty
+                                    breathing and throat irritation; consider staying indoors and rescheduling outdoor
+                                    activities.</td>
+                                <td class="wid fw-semibold">
+                                    <div>150-249</div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th scope="row">Dangerous</sub></th>
+                                <td class="px-5">Any exposure to the air, even for a few minutes, can lead to serious
+                                    health
+                                    effects on everybody. Avoid outdoor activities.</td>
+                                <td class="wid fw-semibold">
+                                    <div>250+</div>
+                                </td>
+                            </tr>
 
-                    </tbody>
-                </table>
-                
+                        </tbody>
+                    </table>
+
+                </div>
             </div>
         </div>
     </div>
-</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
