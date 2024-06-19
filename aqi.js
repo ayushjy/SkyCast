@@ -9,8 +9,15 @@ const option = {
 
 localStorage.getItem("cityname");
 const getaqi = (aqicity) => {
-    document.getElementById('aqicityname').innerHTML = aqicity
-    fetch('https://air-quality-by-api-ninjas.p.rapidapi.com/v1/airquality?city=' + aqicity, option)
+    
+    aqicityname.innerHTML = capitalizeFirstLetter(aqicity);
+
+    function capitalizeFirstLetter(str) {
+        if (str.length === 0) return str;
+        return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+    }
+
+        fetch('https://air-quality-by-api-ninjas.p.rapidapi.com/v1/airquality?city=' + aqicity, option)
         .then(response => response.json())
         .then((response) => {
 

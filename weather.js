@@ -1,16 +1,12 @@
-// const options = {
-//     method: 'GET',
-//     headers: {
-//         'X-RapidAPI-Key': '72ed54729dmshf9ca1af4edff508p1f1f2ejsn965d65d12053',
-//         'X-RapidAPI-Host': 'weather-by-api-ninjas.p.rapidapi.com'
-//     }
-// };
-
-//  const APi_URl="http://api.openweathermap.org/data/2.5/weather?q=delhi&appid=0005c5f8c8001ce523656f6a17d49a4d&units=metric"
-
 const getweather = (city) => {  
-    cityname.innerHTML = city;
-    localStorage.setItem("cityname", city); 
+    cityname.innerHTML = capitalizeFirstLetter(city);
+
+    function capitalizeFirstLetter(str) {
+        if (str.length === 0) return str; 
+        return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+    }
+
+        localStorage.setItem("cityname", city); 
     const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0005c5f8c8001ce523656f6a17d49a4d&units=metric`;
 
     fetch(url)
@@ -37,26 +33,11 @@ submit.addEventListener("click", (e) => {
     getweather(city.value)
     
 })
-getweather("delhi")
+getweather("Delhi")
 
 
 
-showtable1= document.getElementById("showtable1")
-showtable2= document.getElementById("showtable2")
-currpollutant=document.getElementById("currpollutant")
-airquality=document.getElementById("airquality")
-showtable1.addEventListener("click",function(event){
-    event.preventDefault(); 
-    currpollutant.style.display="table";
-    airquality.style.display="none";
-    return false;
-})
-showtable2.addEventListener("click",function(event){
-    event.preventDefault(); 
-    currpollutant.style.display="none";
-    airquality.style.display="table";
-    return false;
-})
+
 
 
 
