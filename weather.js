@@ -1,30 +1,34 @@
-const options = {
-    method: 'GET',
-    headers: {
-        'X-RapidAPI-Key': '72ed54729dmshf9ca1af4edff508p1f1f2ejsn965d65d12053',
-        'X-RapidAPI-Host': 'weather-by-api-ninjas.p.rapidapi.com'
-    }
-};
+// const options = {
+//     method: 'GET',
+//     headers: {
+//         'X-RapidAPI-Key': '72ed54729dmshf9ca1af4edff508p1f1f2ejsn965d65d12053',
+//         'X-RapidAPI-Host': 'weather-by-api-ninjas.p.rapidapi.com'
+//     }
+// };
 
- const APi_URl="https://weather-by-api-ninjas.p.rapidapi.com/v1/weather?city="
+//  const APi_URl="http://api.openweathermap.org/data/2.5/weather?q=delhi&appid=0005c5f8c8001ce523656f6a17d49a4d&units=metric"
 
 const getweather = (city) => {  
     cityname.innerHTML = city;
-    localStorage.setItem("cityname", city); // Store city name in localStorage
-    fetch(APi_URl + city, options)
+    localStorage.setItem("cityname", city); 
+    const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0005c5f8c8001ce523656f6a17d49a4d&units=metric`;
+
+    fetch(url)
         .then(response => response.json())
         .then((response) => {
 
-            cloud_pct.innerHTML = response.cloud_pct
-            temp.innerHTML = response.temp
-            feels_like.innerHTML = response.feels_like
-            humidity.innerHTML = response.humidity
-            min_temp.innerHTML = response.min_temp
-            max_temp.innerHTML = response.max_temp
-            wind_speed.innerHTML = response.wind_speed
-            wind_degrees.innerHTML = response.wind_degrees
-            sunrise.innerHTML = response.sunrise
-            sunset.innerHTML = response.sunset
+            cloud_pct.innerHTML=response.clouds.all
+            temp.innerHTML = response.main.temp
+            feels_like.innerHTML = response.main.feels_like
+            humidity.innerHTML = response.main.humidity
+            min_temp.innerHTML = response.main.temp_min
+            max_temp.innerHTML = response.main.temp_max
+            wind_speed.innerHTML = response.wind.speed
+            wind_degrees.innerHTML = response.wind.deg
+            const sunriseTime = new Date(response.sys.sunrise * 1000).toLocaleTimeString();
+            const sunsetTime = new Date(response.sys.sunset * 1000).toLocaleTimeString();
+            sunrise.innerHTML = sunriseTime;  
+            sunset.innerHTML = sunsetTime;  
         })
         .catch(err => console.error(err));
 }
@@ -33,7 +37,7 @@ submit.addEventListener("click", (e) => {
     getweather(city.value)
     
 })
-getweather("patna")
+getweather("delhi")
 
 
 
