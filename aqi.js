@@ -9,7 +9,7 @@ const option = {
 
 localStorage.getItem("cityname");
 const getaqi = (aqicity) => {
-    
+    const aqicityname = document.getElementById('aqicityname')
     aqicityname.innerHTML = capitalizeFirstLetter(aqicity);
 
     function capitalizeFirstLetter(str) {
