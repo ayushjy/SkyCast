@@ -7,7 +7,7 @@ const getweather = (city) => {
     }
 
         localStorage.setItem("cityname", city); 
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0005c5f8c8001ce523656f6a17d49a4d&units=metric`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0005c5f8c8001ce523656f6a17d49a4d&units=metric`;
 
     fetch(url)
         .then(response => response.json())
